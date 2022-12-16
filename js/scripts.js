@@ -9,3 +9,4 @@ const data = [
     { year: 2016, count: 28 },
   ];
 createBarGraph('chart_0', 'bar', data, 'This is the label')
+

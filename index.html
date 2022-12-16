@@ -16,9 +16,14 @@
 </head>
 
 <body>
+  <div id="demo">
+    <h2>Recently Played Placeholder</h2>
+    <button type="button" onclick="loadRecentlyPlayed()">Get Recently Played</button>
+  </div>
   <div class="chart-container">
     <canvas id="chart_0"></canvas>
-</div>
+  </div>
+  <script src="js/steam.js"></script>
   <script type = "module" src="js/scripts.js"></script>
   <script type = "module" src="js/graph.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.1.0/dist/chart.umd.min.js"></script>

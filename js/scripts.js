@@ -1,13 +1,11 @@
-function loadDoc() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById("demo").innerHTML =
-        this.responseText;
-    }
-    let key = "F2B50EF3BD93CB433B2CB0C60F4D53E9"
-    let steamID = "76561198368190026"
-    let params = "?key=" + key + "&input_json={\"steamid\":" + steamID + "}"
-    let url = "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/"
-    xhttp.open("GET", url + params);
-    xhttp.send();
-}
+import {createBarGraph} from "./graph.js";
+const data = [
+    { year: 2010, count: 10 },
+    { year: 2011, count: 20 },
+    { year: 2012, count: 15 },
+    { year: 2013, count: 25 },
+    { year: 2014, count: 22 },
+    { year: 2015, count: 30 },
+    { year: 2016, count: 28 },
+  ];
+createBarGraph('chart_0', 'bar', data, 'This is the label')

@@ -1,2 +1,1 @@
-# SteamVisualizer
-# eligottlieb.github.io
+# Steam Visualizer

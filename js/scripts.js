@@ -1,5 +1,4 @@
-import {createBarGraph} from "./graph.js";
-
+import {clickHandler, createHourGraph} from "./graph.js";
 
 let data = [
     {title: "Game1", count: 30},
@@ -13,4 +12,6 @@ let data = [
     {title: "Game9", count: 9},
     {title: "Game10", count: 2},
 ]
-createBarGraph('chart_0', data)
+let chart = createHourGraph('chart_0', data)
+
+addEventListener('click', (event) => clickHandler(event, chart))

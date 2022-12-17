@@ -12,10 +12,16 @@ function createHourGraph(id, data) {
                         backgroundColor: "rgba(255, 99, 132, 0.2)",
                         borderColor: "rgb(255, 99, 132)",
                         borderWidth: 1,
+                        hoverBackgroundColor: "rgb(255, 99, 132)"
                     }
                 ]
             },
             options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
                 scales: {
                     x: {
                         grid: {
@@ -27,7 +33,6 @@ function createHourGraph(id, data) {
                             display: false,
                         },
                         beginAtZero: true,
-                        grace: 1,
                     },
                 }
             }
@@ -36,4 +41,15 @@ function createHourGraph(id, data) {
     return chart;
 }
 
-export { createHourGraph as createBarGraph }
+function clickHandler(evt, myChart) {
+    const points = myChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+    if (points.length) {
+        let firstPoint = points[0];
+        var label = myChart.data.labels[firstPoint.index];
+        let value = myChart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+        console.log(label)
+    }
+}
+
+export { createHourGraph as createHourGraph,
+        clickHandler as clickHandler,}

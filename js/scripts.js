@@ -1,11 +1,16 @@
 import {createBarGraph} from "./graph.js";
-const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
-createBarGraph('chart_0', 'bar', data, 'This is the label')
+
+
+let data = [
+    {title: "Game1", count: 30},
+    {title: "Game2", count: 25},
+    {title: "Game3", count: 25},
+    {title: "Game4", count: 22},
+    {title: "Game5", count: 21},
+    {title: "Game6", count: 20},
+    {title: "Game7", count: 15},
+    {title: "Game8", count: 15},
+    {title: "Game9", count: 9},
+    {title: "Game10", count: 2},
+]
+createBarGraph('chart_0', data)

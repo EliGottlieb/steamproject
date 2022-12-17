@@ -1,30 +1,39 @@
-function createGraph(id, type, data, label) {
-    new Chart(
+function createHourGraph(id, data) {
+    let chart = new Chart(
         document.getElementById(id),
         {
-            type: type,
+            type: "bar",
             data: {
-                labels: data.map(row => row.year),
+                labels: data.map(row => row.title),
                 datasets: [
                     {
-                        label: label,
-                        data: data.map(row => row.count)
+                        label: "Hours Played",
+                        data: data.map(row => row.count),
+                        backgroundColor: "rgba(255, 99, 132, 0.2)",
+                        borderColor: "rgb(255, 99, 132)",
+                        borderWidth: 1,
                     }
                 ]
             },
             options: {
-                animations: {
-                    tension: {
-                        duration: 1000,
-                        easing: 'linear',
-                        from: 1,
-                        top: 0,
-                        loop: true
-                    }
-                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                        },
+                    },
+                    y: {
+                        grid: {
+                            display: false,
+                        },
+                        beginAtZero: true,
+                        grace: 1,
+                    },
+                }
             }
         }
     );
+    return chart;
 }
 
-export {createGraph as createBarGraph}
+export { createHourGraph as createBarGraph }
